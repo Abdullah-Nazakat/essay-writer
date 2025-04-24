@@ -23,7 +23,7 @@ const Navbar = () => {
         />
       )}
 
-      {/* Sticky Navbar Container */}
+      {/* Sticky NavbarF Container */}
       <div className='fixed top-0 left-0 w-full z-40 transition-colors duration-300'>
         <div className={`text-white ${isScrolled ? 'bg-black' : 'bg-transparent'} flex items-center p-6 relative transition-colors duration-300`}>
           {/* Logo - Left Aligned */}

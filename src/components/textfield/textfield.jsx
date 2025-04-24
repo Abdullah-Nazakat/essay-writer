@@ -19,15 +19,18 @@ const Textfield = ({
       
       {type === "dropdown" ? (
         <select
-          className='border border-[#D4D4D8] rounded-md p-4 focus:outline-none focus:ring-2 
-          focus:ring-blue-500 focus:border-transparent text-black bg-white'
+        className={`border border-[#D4D4D8] rounded-md p-4 focus:outline-none focus:ring-2 
+          focus:black focus:border-transparent bg-white 
+          ${value === '' ? 'text-gray-500' : 'text-black'}`}
           id={name}
           name={name}
           value={value}
           onChange={onChange}
           required={required}
         >
-          <option value="" disabled hidden>
+          <option value="" disabled hidden 
+          //  style={{ color: '#9CA3AF' }}
+          >
             {dropdownPlaceholder || placeholder}
           </option>
           {options.map((option, index) => (
@@ -39,7 +42,7 @@ const Textfield = ({
       ) : type === "textarea" ? (
         <textarea
           className='border border-[#D4D4D8] rounded-md p-4 focus:outline-none focus:ring-2 
-          focus:ring-blue-500 focus:border-transparent text-black min-h-[144px]'
+          focus:black focus:border-transparent text-black min-h-[144px]'
           id={name}
           name={name}
           placeholder={placeholder}
@@ -50,7 +53,7 @@ const Textfield = ({
       ) : (
         <input 
           className='border border-[#D4D4D8] rounded-md p-4 focus:outline-none focus:ring-2 
-          focus:ring-blue-500 focus:border-transparent text-black'
+          focus:black focus:border-transparent text-black'
           type={type}
           id={name}
           name={name}

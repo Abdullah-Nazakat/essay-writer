@@ -26,7 +26,7 @@ const Numfield = ({
       <div className="relative">
         <input 
           className='border border-[#D4D4D8] rounded-md p-4 focus:outline-none focus:ring-2 
-          focus:ring-blue-500 focus:border-transparent text-black w-full pr-16'
+          focus:black focus:border-transparent text-black w-full pr-16'
           type="number"
           id={name}
           name={name}
@@ -37,7 +37,7 @@ const Numfield = ({
           step="100"
         />
         
-        <div className="absolute right-5 top-0 h-full flex gap-2">
+        <div className="absolute right-5 top-0 h-full flex flex-row-reverse gap-2">
           <button
             type="button"
             onClick={handleIncrement}

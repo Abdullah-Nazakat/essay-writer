@@ -9,14 +9,15 @@ import RichTextEditor from '@/components/richeditor/RichTextEditor';
 import Numfield from '@/components/numfield/numfield';
 import { jsPDF } from 'jspdf';
 import htmlDocx from 'html-docx-js/dist/html-docx';
+import { simplePost } from '@/Controller/api';
 
 const HomeMainarea = () => {
   const [isGenerated, setIsGenerated] = useState(false);
   const [wordCount, setWordCount] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
-  const [targetWordCount, setTargetWordCount] = useState(100);
+  const [targetWordCount, setTargetWordCount] = useState(500);
   const [showExportDropdown, setShowExportDropdown] = useState(false);
-  const [formData, setFormData] = useState({ topic: '', academicLevel: '', message: '' });
+  const [formData, setFormData] = useState({ topic: '', academicLevel: '', aditionalInstructions: '' });
 
   const editorRef = useRef(null);
 
@@ -38,8 +39,19 @@ const HomeMainarea = () => {
       return;
     }
     setIsLoading(true);
+    
     try {
+      const response = await simplePost('humanize/generate-essay', formData, null, false, {
+        isweb: true
+      });
       
+      if (response?.status && response?.data) {
+        const formattedContent = response.data.replace(/\n\n/g, '</p><p>');
+        const htmlContent = `<p>${formattedContent}</p>`;
+        editorRef.current.setContent(htmlContent);
+        setIsGenerated(true);
+        updateWordCount();
+      }
     } catch (error) {
       console.error('Error generating essay:', error);
       alert('Failed to generate essay');
@@ -119,7 +131,8 @@ const HomeMainarea = () => {
   };
 
   const clearAll = () => {
-    setFormData({ topic: '', academicLevel: '', message: '' });
+    setFormData({ topic: '', academicLevel: '', aditionalInstructions: '' });
+    setTargetWordCount(500); // Reset word count to default
     handleErase();
   };
 
@@ -132,23 +145,22 @@ const HomeMainarea = () => {
 
           <form onSubmit={(e) => { e.preventDefault(); generateEssay(); }} className="flex flex-col gap-6">
             <Textfield name="topic" label="Essay Topic*" required placeholder="Enter your essay topic" value={formData.topic} onChange={handleInputChange} />
-            <Textfield name="academicLevel" label="Academic Level" type="dropdown" options={[
-              { value: '', label: "Select academic level" },
+            <Textfield name="academicLevel" label="Academic Level" placeholder='Select academic level' type="dropdown" options={[
               { value: "high school", label: "High School" },
               { value: "college", label: "College" },
               { value: "university", label: "University" },
               { value: "masters", label: "Master's" },
               { value: "phd", label: "PhD" }
             ]} value={formData.academicLevel} onChange={handleInputChange} />
-            <Numfield name="targetWordCount" value={targetWordCount} onChange={(e) => setTargetWordCount(Number(e.target.value))} required />
-            <Textfield name="message" label="Additional Instructions" type="textarea" rows={6} value={formData.message} onChange={handleInputChange} />
+            <Numfield name="words" value={targetWordCount} onChange={(e) => setTargetWordCount(Number(e.target.value))} required />
+            <Textfield name="aditionalInstructions" placeholder='Type here...' label="Additional Instructions" type="textarea" rows={6} value={formData.aditionalInstructions} onChange={handleInputChange} />
             
             <div className="flex flex-col sm:flex-row justify-between gap-4 mt-4">
-              <button type="button" onClick={clearAll} className="flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 transition">
+              <button type="button" onClick={clearAll} className="flex cursor-pointer items-center gap-2 px-6 py-3 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 transition">
                 <Image src={arrowsvg} width={15} height={15} alt="Clear" />
                 Clear All
               </button>
-              <button type="submit" disabled={isLoading} className={`flex items-center gap-2 px-6 py-3 rounded-lg bg-custom-dark text-white hover:bg-blue-700 transition ${isLoading ? 'opacity-70 cursor-not-allowed' : ''}`}>
+              <button type="submit" disabled={isLoading} className={`flex cursor-pointer items-center gap-2 px-6 py-3 rounded-lg bg-custom-dark text-white hover:bg-blue-700 transition ${isLoading ? 'opacity-70 cursor-not-allowed' : ''}`}>
                 {isLoading ? 'Generating...' : 'Generate Essay'}
                 <Image src={arrowwhite} width={15} height={15} alt="Generate" />
               </button>
@@ -176,47 +188,46 @@ const HomeMainarea = () => {
               <button onClick={() => handleErase()} className="px-3 py-1.5 rounded-md text-sm bg-red-50 text-red-600 hover:bg-red-100">Clear</button>
 
               {/* Export Dropdown */}
-<div className="relative">
-  <button
-    onClick={() => setShowExportDropdown((prev) => !prev)}
-    className="px-3 py-1.5 rounded-md text-sm bg-gray-100 text-gray-700 hover:bg-gray-200"
-  >
-    Export ▼
-  </button>
+              <div className="relative">
+                <button
+                  onClick={() => setShowExportDropdown((prev) => !prev)}
+                  className="px-3 py-1.5 rounded-md text-sm bg-gray-100 text-gray-700 hover:bg-gray-200"
+                >
+                  Export ▼
+                </button>
 
-  {showExportDropdown && (
-    <div className="absolute bottom-10 z-10 mt-1 bg-white border rounded-md shadow-lg">
-      <button
-        onClick={() => {
-          handleExport('txt');
-          setShowExportDropdown(false);
-        }}
-        className="block px-4 py-2 text-sm hover:bg-gray-100 w-full text-left"
-      >
-        Export as .txt
-      </button>
-      <button
-        onClick={() => {
-          handleExport('pdf');
-          setShowExportDropdown(false);
-        }}
-        className="block px-4 py-2 text-sm hover:bg-gray-100 w-full text-left"
-      >
-        Export as .pdf
-      </button>
-      <button
-        onClick={() => {
-          handleExport('docx');
-          setShowExportDropdown(false);
-        }}
-        className="block px-4 py-2 text-sm hover:bg-gray-100 w-full text-left"
-      >
-        Export as .docx
-      </button>
-    </div>
-  )}
-</div>
-
+                {showExportDropdown && (
+                  <div className="absolute bottom-10 z-10 mt-1 bg-white border rounded-md shadow-lg">
+                    <button
+                      onClick={() => {
+                        handleExport('txt');
+                        setShowExportDropdown(false);
+                      }}
+                      className="block px-4 py-2 text-sm hover:bg-gray-100 w-full text-left"
+                    >
+                      Export as .txt
+                    </button>
+                    <button
+                      onClick={() => {
+                        handleExport('pdf');
+                        setShowExportDropdown(false);
+                      }}
+                      className="block px-4 py-2 text-sm hover:bg-gray-100 w-full text-left"
+                    >
+                      Export as .pdf
+                    </button>
+                    <button
+                      onClick={() => {
+                        handleExport('docx');
+                        setShowExportDropdown(false);
+                      }}
+                      className="block px-4 py-2 text-sm hover:bg-gray-100 w-full text-left"
+                    >
+                      Export as .docx
+                    </button>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>

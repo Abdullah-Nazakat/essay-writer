@@ -30,7 +30,7 @@ const RichTextEditor = forwardRef((_, ref) => {
               ['clean'],
             ],
           },
-          placeholder: 'Write something...',
+          placeholder: 'Generated essay will appear here...',
         });
 
         quillInstance.current.on('text-change', () => {
@@ -50,13 +50,23 @@ const RichTextEditor = forwardRef((_, ref) => {
         }
       }
     };
-  }, []);
+  }, [ref]);
 
   useImperativeHandle(ref, () => ({
-    getContent: () => quillInstance.current?.root.innerHTML || '',
-    getText: () => quillInstance.current?.getText() || '',
+    getContent: () => {
+      return quillInstance.current?.root.innerHTML || '';
+    },
+    getText: () => {
+      return quillInstance.current?.getText() || '';
+    },
     setContent: (html) => {
-      quillInstance.current?.clipboard.dangerouslyPasteHTML(html);
+      if (quillInstance.current) {
+        const range = quillInstance.current.getSelection();
+        quillInstance.current.clipboard.dangerouslyPasteHTML(html);
+        if (range) {
+          quillInstance.current.setSelection(range);
+        }
+      }
     },
     clearContent: () => {
       quillInstance.current?.setContents([{ insert: '\n' }]);
@@ -68,7 +78,7 @@ const RichTextEditor = forwardRef((_, ref) => {
     <div className="overflow-ellipsis">
       <div
         ref={editorContainerRef}
-        className="h-[415px] bg-white [&_.ql-container]:border-none
+        className="h-[500px] bg-white [&_.ql-container]:border-none
         [&_.ql-editor]:border-none [&_.ql-editor]:shadow-none"
       />
     </div>

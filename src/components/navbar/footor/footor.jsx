@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Linkdin from '@/components/svg/linkdin.svg'
 import Facebook from '@/components/svg/facebook.svg'
+import Link from 'next/link'
 const Footer = () => {
   return (
     <div className='border-t border-gray-800 bg-black text-white py-12 px-6 sm:px-12 lg:px-20'>
@@ -12,10 +13,10 @@ const Footer = () => {
           <div className='flex-1'>
             <h3 className='text-white text-lg font-bold mb-4'>Product</h3>
             <ul className='space-y-3 text-gray-400'>
-              <li><a href="#" className='hover:text-white transition'>Features</a></li>
-              <li><a href="#" className='hover:text-white transition'>Pricing</a></li>
+              <li><a href="#key-features" className='hover:text-white transition'>Features</a></li>
+              {/* <li><a href="#" className='hover:text-white transition'>Pricing</a></li>
               <li><a href="#" className='hover:text-white transition'>Integrations</a></li>
-              <li><a href="#" className='hover:text-white transition'>Updates</a></li>
+              <li><a href="#" className='hover:text-white transition'>Updates</a></li> */}
             </ul>
           </div>
 
@@ -23,10 +24,11 @@ const Footer = () => {
           <div className='flex-1'>
             <h3 className='text-white text-lg font-bold mb-4'>Information</h3>
             <ul className='space-y-3 text-gray-400'>
-              <li><a href="#" className='hover:text-white transition'>Blog</a></li>
+              {/* <li><a href="#" className='hover:text-white transition'>Blog</a></li>
               <li><a href="#" className='hover:text-white transition'>Documentation</a></li>
-              <li><a href="#" className='hover:text-white transition'>Guides</a></li>
-              <li><a href="#" className='hover:text-white transition'>Support</a></li>
+              <li><a href="#" className='hover:text-white transition'>Guides</a></li> */}
+              <li><Link href="https://ozelea.com/contact-us/" target='/' className='hover:text-white transition'>Contact Us</Link></li>
+              <li><Link href="#Testimonials" className='hover:text-white transition'>Testimonials</Link></li>
             </ul>
           </div>
 
@@ -34,10 +36,10 @@ const Footer = () => {
           <div className='flex-1'>
             <h3 className='text-white text-lg font-bold mb-4'>Company</h3>
             <ul className='space-y-3 text-gray-400'>
-              <li><a href="#" className='hover:text-white transition'>About Us</a></li>
-              <li><a href="#" className='hover:text-white transition'>Careers</a></li>
+              <li><Link target='/' href="https://ozelea.com/about-us/" className='hover:text-white transition'>About Us</Link></li>
+              {/* <li><a href="#" className='hover:text-white transition'>Careers</a></li>
               <li><a href="#" className='hover:text-white transition'>Contact</a></li>
-              <li><a href="#" className='hover:text-white transition'>Press</a></li>
+              <li><a href="#" className='hover:text-white transition'>Press</a></li> */}
             </ul>
           </div>
         </div>
@@ -53,20 +55,20 @@ const Footer = () => {
 
           {/* Social Icons */}
           <div className='flex gap-6 items-center'>
-            <a href="#" className='text-gray-400 hover:text-white transition'>
+            <Link href="https://www.linkedin.com/company/ozelea/" target='/' className='text-gray-400 hover:text-white transition'>
              <Image
              src={Linkdin}
              width={35}
              height={35}
              />
-            </a>
-            <a href="#" className='text-gray-400 hover:text-white transition'>
+            </Link>
+            <Link href="https://www.instagram.com/ozeleatech?igsh=MXFvYWZuZ2czcjg5ZQ" target='/' className='text-gray-400 hover:text-white transition'>
             <Image
              src={Facebook}
              width={10}
              height={16}
              />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

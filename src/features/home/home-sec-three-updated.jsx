@@ -38,6 +38,7 @@ const HomeScThreeUpdated = () => {
 
   return (
     <div className='mx-4 sm:mx-8 md:mx-12 lg:mx-20 my-12 md:my-20'>
+         <div id="key-features" className='scroll-mt-25'/> 
       <div className='text-center mb-8 sm:mb-12 md:mb-16'>
         <h2 className="f-18 text-transparent bg-clip-text bg-gradient-to-b from-blue-500 via-blue-300 to-white">
           KEY FEATURES
