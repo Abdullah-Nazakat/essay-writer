@@ -11,7 +11,7 @@ import HomeSecSix from '@/features/home/home-sec-six'
 import Footor from '@/components/navbar/footor/footor'
 // import HomeSecThree from '@/features/home/home-sec-three'
 import HomeFaqs from '@/features/home/home-faqs'
-import HomeSecEight from '@/features/home/home-sec-eight'
+// import HomeSecEight from '@/features/home/home-sec-eight'
 const page = () => {
   return (
     <div>
@@ -27,7 +27,7 @@ const page = () => {
       <HomeSecSix/>
       {/* <HomeSecSeven/> */}
       <HomeFaqs/>
-      <HomeSecEight/>
+      {/* <HomeSecEight/> */}
       <Footor/>
       </div>
       

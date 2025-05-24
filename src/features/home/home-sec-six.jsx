@@ -9,9 +9,9 @@ const HomeSecSix = () => {
           <h2 className="f-18 text-transparent bg-clip-text bg-gradient-to-b from-blue-500 via-blue-300 to-white">
           TESTIMONIALS
           </h2>
-          <p style={{color:"rgba(255, 255, 255, 0.9)"}} className='f-40-700'>
+          <h3 style={{color:"rgba(255, 255, 255, 0.9)"}} className='f-40-700'>
           What our User Says
-          </p>
+          </h3>
         </div>
         <div className='px-5'>
             <Swiper/>

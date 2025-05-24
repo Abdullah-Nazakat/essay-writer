@@ -1,6 +1,8 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
+import Logo from '../../../public/logo.png'
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
@@ -28,7 +30,12 @@ const Navbar = () => {
         <div className={`text-white ${isScrolled ? 'bg-black' : 'bg-transparent'} flex items-center p-6 relative transition-colors duration-300`}>
           {/* Logo - Left Aligned */}
           <div className='mr-auto'>
-            <span className='font-bold text-xl'>LOGO</span>
+            {/* <span className='font-bold text-xl'>LOGO</span> */}
+            <Image
+            src={Logo}
+            width={60}
+            height={60}
+            />
           </div>
 
           {/* Desktop Navigation Links - Centered */}

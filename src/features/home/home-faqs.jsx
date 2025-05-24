@@ -44,9 +44,9 @@ const HomeFaqs = () => {
         <h2 className='f-40-700'>
           Frequently asked questions
         </h2>
-        <p style={{fontWeight:"400"}} className='f-18'>
+        <h3 style={{fontWeight:"400"}} className='f-18'>
           Here are some common questions about our AI writer
-        </p>
+        </h3>
       </div>
 
       <div className='flex flex-col lg:flex-row justify-center items-start gap-0 sm:gap-[48px] container'>
@@ -58,7 +58,7 @@ const HomeFaqs = () => {
               className='border border-[rgba(212,212,216,1)] rounded-lg px-[16px] py-[24px] bg-white text-black group'
             >
               <summary className='list-none cursor-pointer flex justify-between items-center'>
-                <span className='f-20'>{faq.question}</span>
+                <h4 className='f-20'>{faq.question}</h4>
                 <span className='text-xl transition-transform duration-200'>
                   <span className='group-open:hidden'><svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.5 8C0.5 3.58172 4.08172 0 8.5 0H24.5C28.9183 0 32.5 3.58172 32.5 8V24C32.5 28.4183 28.9183 32 24.5 32H8.5C4.08172 32 0.5 28.4183 0.5 24V8Z" fill="#F4F4F5"/>
@@ -85,7 +85,7 @@ const HomeFaqs = () => {
               className='border border-[rgba(212,212,216,1)] rounded-lg px-[16px] py-[24px] bg-white text-black group'
             >
               <summary className='list-none cursor-pointer flex justify-between items-center'>
-                <span className='f-20'>{faq.question}</span>
+                <h4 className='f-20'>{faq.question}</h4>
                 <span className='text-xl transition-transform duration-200'>
                   <span className='group-open:hidden'><svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.5 8C0.5 3.58172 4.08172 0 8.5 0H24.5C28.9183 0 32.5 3.58172 32.5 8V24C32.5 28.4183 28.9183 32 24.5 32H8.5C4.08172 32 0.5 28.4183 0.5 24V8Z" fill="#F4F4F5"/>

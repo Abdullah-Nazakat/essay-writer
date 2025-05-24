@@ -16,17 +16,17 @@ const HomeScThreeUpdated = () => {
     },
     {
       title: "Plagiarism-Free Content",
-      description: "Every essay is 100% original and written from scratch, helping you avoid duplication and maintain academic integrity. You can submit your work confidently, knowing it's unique and credible.",
+      description: "Every essay is 100% original and written from scratch, offering help to write a essay that avoids duplication and maintains academic integrity. You can submit your work confidently, knowing it's unique and credible.",
       icon: 'svg'
     },
     {
       title: "Essay Structure Optimization",
-      description: "Our AI follows proper structure: introduction, body, conclusion—ensuring clarity and logical flow. Each section is thoughtfully crafted to support your argument and engage the reader.",
+      description: "Our AI follows proper structure: introduction, body, conclusion—ensuring clarity and logical flow. If you're wondering how to write an essay, each section is thoughtfully crafted to support your argument and engage the reader.",
       icon: 'svg'
     },
     {
       title: "Customization Options",
-      description: "Choose tone (formal, casual, persuasive), academic level (high school, college, etc.), and word count to suit your specific needs. Your essay is truly yours—flexible, personalized, and ready to impress.",
+      description: "Choose tone (formal, casual, persuasive), academic level (high school, college, etc.), and word count to suit your specific needs. Just say, 'Write me a narrative essay,' and your essay is truly yours—flexible, personalized, and ready to impress",
       icon: 'svg'
     },
     {

@@ -36,7 +36,7 @@ const HomeSecTwo = () => {
         </p>
         
         <p className='text-gray-300 max-w-2xl mx-auto'>
-          We are an AI-powered writing platform designed to help you craft high-quality essays in a fraction of the time. Whether you're a student facing tight deadlines or someone who just needs a little help getting started, our tool makes writing fast, easy, and stress-free.
+         We are the best AI to write essay, designed to help you craft high-quality essays in a fraction of the time. Whether you're a student facing tight deadlines or someone who just needs a little help getting started, our tool makes writing fast, easy, and stress-free.
         </p>
 
         <div className='flex flex-col md:flex-row justify-center gap-8 mt-8 text-white'>

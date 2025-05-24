@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Linkdin from '@/components/svg/linkdin.svg'
-import Facebook from '@/components/svg/facebook.svg'
+import Instagram from '@/components/svg/instgram.svg'
 import Link from 'next/link'
 const Footer = () => {
   return (
@@ -29,6 +29,7 @@ const Footer = () => {
               <li><a href="#" className='hover:text-white transition'>Guides</a></li> */}
               <li><Link href="https://ozelea.com/contact-us/" target='/' className='hover:text-white transition'>Contact Us</Link></li>
               <li><Link href="#Testimonials" className='hover:text-white transition'>Testimonials</Link></li>
+              
             </ul>
           </div>
 
@@ -48,9 +49,9 @@ const Footer = () => {
         <div className='flex flex-col-reverse md:flex-row justify-between items-center pt-8 border-t border-gray-800'>
           {/* Legal Links */}
           <div className='flex flex-wrap gap-4 md:gap-6 mt-6 md:mt-0 text-sm text-gray-400'>
-            <a href="#" className='hover:text-white transition'>Terms of Service</a>
-            <a href="#" className='hover:text-white transition'>Privacy Policy</a>
-            <a href="#" className='hover:text-white transition'>Cookie Policy</a>
+            <Link href="https://ozelea.com/terms-and-conditions/" target='/' className='hover:text-white transition'>Terms of Service</Link>
+            <Link href="https://ozelea.com/privacy-policy/" target='/' className='hover:text-white transition'>Privacy Policy</Link>
+            {/* <a href="#" className='hover:text-white transition'>Cookie Policy</a> */}
           </div>
 
           {/* Social Icons */}
@@ -64,9 +65,9 @@ const Footer = () => {
             </Link>
             <Link href="https://www.instagram.com/ozeleatech?igsh=MXFvYWZuZ2czcjg5ZQ" target='/' className='text-gray-400 hover:text-white transition'>
             <Image
-             src={Facebook}
-             width={10}
-             height={16}
+             src={Instagram}
+             width={20}
+             height={20}
              />
             </Link>
           </div>
