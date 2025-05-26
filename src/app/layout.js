@@ -26,25 +26,25 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="canonical" href="https://essay-writer-4hcy.vercel.app/" />
-        {/* Favicon */}
+    
         <link rel="icon" href="/logo.png" type="image/png" />
 
-        {/* Primary Meta Tags */}
+      
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="title" content="AI GenEssay" />
-        {/* <meta name="description" content={metadata.description} /> */}
+       
         <meta name="keywords" content="AI essay writer, essay generator, plagiarism free, academic writing, essay tool, AI writing assistant" />
         <meta name="author" content="AI GenEssay Team" />
 
-        {/* Open Graph / Facebook */}
+       
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://essay-writer-4hcy.vercel.app/" />
         <meta property="og:title" content="AI GenEssay" />
         <meta property="og:description" content={metadata.description} />
        <meta property="og:image" content="https://essay-writer-4hcy.vercel.app/cover.png" />
 
-        {/* Twitter */}
+       
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:url" content="https://essay-writer-4hcy.vercel.app/" />
         <meta name="twitter:title" content="AI GenEssay" />
