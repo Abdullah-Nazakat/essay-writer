@@ -51,7 +51,7 @@ export default function RootLayout({ children }) {
         <meta name="twitter:description" content={metadata.description} />
         <meta name="twitter:image" content="https://essay-writer-4hcy.vercel.app/cover.png" />
         <meta name="twitter:site" content="https://essay-writer-4hcy.vercel.app/" />
-        <meta name="twitter:creator" content="https://essay-writer-4hcy.vercel.app/" />
+        <meta name="twitter:creator" content="@aigenessaywriter" />
 
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
