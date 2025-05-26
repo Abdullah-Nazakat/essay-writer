@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/navbar";
+import Cover from '../../public/cover.png'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,14 +43,14 @@ export default function RootLayout({ children }) {
         <meta property="og:url" content="https://essay-writer-4hcy.vercel.app/" />
         <meta property="og:title" content="AI GenEssay" />
         <meta property="og:description" content={metadata.description} />
-        <meta property="og:image" content= '../../public/cover.png' />
+       <meta property="og:image" content="https://essay-writer-4hcy.vercel.app/cover.png" />
 
         {/* Twitter */}
-        <meta name="twitter:card" content='../../public/cover.png' />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://essay-writer-4hcy.vercel.app/" />
         <meta name="twitter:title" content="AI GenEssay" />
         <meta name="twitter:description" content={metadata.description} />
-        <meta name="twitter:image" content='../../public/cover.png'  />
+        <meta name="twitter:image" content="https://essay-writer-4hcy.vercel.app/cover.png" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Navbar />
