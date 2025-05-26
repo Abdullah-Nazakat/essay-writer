@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
        <meta property="og:image" content="https://essay-writer-4hcy.vercel.app/cover.png" />
 
         {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary" />
         <meta name="twitter:url" content="https://essay-writer-4hcy.vercel.app/" />
         <meta name="twitter:title" content="AI GenEssay" />
         <meta name="twitter:description" content={metadata.description} />
