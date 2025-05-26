@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://essay-writer-4hcy.vercel.app/sitemap.xml

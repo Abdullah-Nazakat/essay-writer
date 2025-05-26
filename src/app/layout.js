@@ -25,6 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <link rel="canonical" href="https://essay-writer-4hcy.vercel.app/" />
         {/* Favicon */}
         <link rel="icon" href="/logo.png" type="image/png" />
 
@@ -38,17 +39,17 @@ export default function RootLayout({ children }) {
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourdomain.com/" />
+        <meta property="og:url" content="https://essay-writer-4hcy.vercel.app/" />
         <meta property="og:title" content="AI GenEssay" />
         <meta property="og:description" content={metadata.description} />
-        <meta property="og:image" content="https://yourdomain.com/logo.png" />
+       <meta property="og:image" content="https://essay-writer-4hcy.vercel.app/cover.png" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://yourdomain.com/" />
+        <meta name="twitter:url" content="https://essay-writer-4hcy.vercel.app/" />
         <meta name="twitter:title" content="AI GenEssay" />
         <meta name="twitter:description" content={metadata.description} />
-        <meta name="twitter:image" content="https://yourdomain.com/logo.png" />
+        <meta name="twitter:image" content="https://essay-writer-4hcy.vercel.app/cover.png" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Navbar />
