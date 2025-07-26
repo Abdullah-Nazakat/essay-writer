@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="canonical" href="http://essaywriter.ozelea.com/" />
+        <link rel="canonical" href="https://essaywriter.ozelea.com/" />
         <link rel="icon" href="/logo.png" type="image/png" />
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -33,16 +33,16 @@ export default function RootLayout({ children }) {
         <meta name="keywords" content="AI essay writer, essay generator, plagiarism free, academic writing, essay tool, AI writing assistant" />
         <meta name="author" content="AI GenEssay Team" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://essaywriter.ozelea.com/" />
+        <meta property="og:url" content="https://essaywriter.ozelea.com/" />
         <meta property="og:title" content="AI GenEssay" />
         <meta property="og:description" content={metadata.description} />
-       <meta property="og:image" content="http://essaywriter.ozelea.com/cover.png" />
+       <meta property="og:image" content="https://essaywriter.ozelea.com/cover.png" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:url" content="http://essaywriter.ozelea.com/" />
+        <meta name="twitter:url" content="https://essaywriter.ozelea.com/" />
         <meta name="twitter:title" content="AI GenEssay" />
         <meta name="twitter:description" content={metadata.description} />
-        <meta name="twitter:image" content="http://essaywriter.ozelea.com/cover.png" />
-        <meta name="twitter:site" content="http://essaywriter.ozelea.com/" />
+        <meta name="twitter:image" content="https://essaywriter.ozelea.com/cover.png" />
+        <meta name="twitter:site" content="https://essaywriter.ozelea.com/" />
         <meta name="twitter:creator" content="@aigenessaywriter" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>

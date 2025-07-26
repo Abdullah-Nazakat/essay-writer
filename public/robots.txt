@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://essaywriter.ozelea.com/sitemap.xml
+Sitemap: https://essaywriter.ozelea.com/sitemap.xml

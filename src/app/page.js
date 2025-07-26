@@ -10,7 +10,6 @@ import HomeSecSix from '@/features/home/home-sec-six'
 // import HomeSecSeven from '@/features/home/home-sec-seven'
 import Footor from '@/components/navbar/footor/footor'
 // import HomeSecThree from '@/features/home/home-sec-three'
-// Tags
 import HomeFaqs from '@/features/home/home-faqs'
 import HomeSecEight from '@/features/home/home-sec-eight'
 const page = () => {
