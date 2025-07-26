@@ -4,9 +4,9 @@ import axios from 'axios';
 //   'https://e278-2401-ba80-aa90-124a-970-bf2f-8895-ba6a.ngrok-free.app/api/';
 // export const imageURL =
 //   'https://e278-2401-ba80-aa90-124a-970-bf2f-8895-ba6a.ngrok-free.app/uploads/';
-export const baseURL = 'http://192.168.100.191:3000/api/';
+export const baseURL = 'https://api.ozelea.com/api/';
 // export const baseURL = 'https://5j9spjlv-6000.inc1.devtunnels.ms/api/';
-export const imageURL = 'https://app.essaywriter.co/uploads/';
+export const imageURL = 'https://api.ozelea.com/uploads/';
 //jwt expired
 export const simplePost = async (endpoint, data, token, contentType, passedHeaders={}) => {
   try {

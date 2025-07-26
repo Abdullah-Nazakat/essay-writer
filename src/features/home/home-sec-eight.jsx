@@ -3,7 +3,7 @@ import Image from 'next/image';
 import appMockup from '../../../public/mobile.png'; 
 import MobileEllipse from '../../../public/MobileEllipse.png';
 import appleStoreBadge from '../../../src/components/svg/appleStoreBadge.svg'; 
-import googlePlayBadge from '../../../src/components/svg/googlePlayBadge.svg';
+// import googlePlayBadge from '../../../src/components/svg/googlePlayBadge.svg';
 
 const HomeSecEight = () => {
   return (
@@ -39,7 +39,7 @@ const HomeSecEight = () => {
             {/* App Store Buttons */}
             <div className='flex flex-wrap gap-3 sm:gap-4 mt-2 md:mt-4'>
               <a href="#" className='inline-block'>
-                <div className='text-black border border-gray-300 bg-white hover:bg-gray-50
+                {/* <div className='text-black border border-gray-300 bg-white hover:bg-gray-50
                  flex items-center gap-3 p-2 sm:p-3 rounded-lg transition-all cursor-pointer shadow-sm hover:shadow-md active:scale-95'>
                   <Image
                     src={googlePlayBadge}
@@ -56,10 +56,10 @@ const HomeSecEight = () => {
                       Google Play
                     </span>
                   </div>
-                </div>
+                </div> */}
               </a>
 
-              <a href="#" className='inline-block'>
+              <a href="https://apps.apple.com/us/app/ai-genessay/id6745103595" className='inline-block'>
                 <div className='text-black border border-gray-300 bg-white hover:bg-gray-50 flex items-center gap-3 p-2 sm:p-3 rounded-lg transition-all cursor-pointer shadow-sm hover:shadow-md active:scale-95'>
                   <Image
                     src={appleStoreBadge}

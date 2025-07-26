@@ -1,10 +1,7 @@
-const BASE_URL = `https://5j9spjlv-6000.inc1.devtunnels.ms/`
-
+// const BASE_URL = `https://5j9spjlv-6000.inc1.devtunnels.ms/`
+// https://api.ozelea.com/
+const BASE_URL = `https://api.ozelea.com/`
 const TAG = 'API.js';
-
-
-
-
 const getRequest = async (endPoint, token = false) => {
   try {
     const headers = {
